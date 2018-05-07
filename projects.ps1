@@ -1,0 +1,1 @@
+function node { work; vs "node/build/node.sln" }
