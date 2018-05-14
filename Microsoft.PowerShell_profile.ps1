@@ -37,8 +37,9 @@ function push {
 function hm { cd ~/ }
 function dev { cd ~/dev }
 function work { cd ~/dev/work }
-function pf { cd 'C:\Program Files\' }
-function pf3 { cd 'C:\Program Files (x86)\' }
+function sand { cd ~/dev/sand }
+function pf { cd 'C:\Program Files\'; op }
+function pf3 { cd 'C:\Program Files (x86)\'; op }
 
 echo hello $env:username
 
