@@ -1,4 +1,3 @@
-function include { . "$PSScriptRoot/$args" }
 function ch { . 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' $args }
 function touch { $null >> $args }
 function subl { . 'C:\Program Files\Sublime Text 3\subl.exe' $args }
@@ -6,8 +5,6 @@ function subll { subl . }
 function vs { . "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $args }
 
 $env:Path += 'C:\Program Files\CMake\bin\'
-
-#include browser.ps1
 
 . "$PSScriptRoot/browser.ps1"
 . "$PSScriptRoot/projects.ps1"
@@ -39,6 +36,7 @@ function push {
 
 function hm { cd ~/ }
 function dev { cd '~/Google Drive/dev' }
+function spy { cd '~/Google Drive/dev/python' }
 function work { cd '~/Google Drive/dev/work' }
 function sand { cd '~/Google Drive/dev/sand' }
 function pf { cd 'C:\Program Files\'; op }
