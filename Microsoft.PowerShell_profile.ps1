@@ -36,7 +36,6 @@ function push {
 
 function hm { cd ~/ }
 function dev { cd '~/Google Drive/dev' }
-function spy { cd '~/Google Drive/dev/python' }
 function work { cd '~/Google Drive/dev/work' }
 function sand { cd '~/Google Drive/dev/sand' }
 function pf { cd 'C:\Program Files\'; op }
