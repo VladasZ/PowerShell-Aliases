@@ -20,6 +20,7 @@ function op { ii . }
 function res { Start-Process PowerShell; exit }
 
 function build { py .\configuration\build.py }
+function newbuild { py build.py }
 
 #git
 

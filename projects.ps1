@@ -45,7 +45,7 @@ function reengine {
 function engine { 
     cdengine
     if(!(Test-Path 'build' -PathType Container)) { 
-        build
+        newbuild
     }
     vs "build\TestEngine.sln" 
 }
