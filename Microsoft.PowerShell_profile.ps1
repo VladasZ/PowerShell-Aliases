@@ -4,8 +4,16 @@ function subl { . 'C:\Program Files\Sublime Text 3\subl.exe' $args }
 function subll { subl . }
 function vs { . "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $args }
 
+$__scriptsPath = "C:\Users\$env:username\Documents\WindowsPowerShell"
 $env:Path += 'C:\Program Files\CMake\bin\'
 
+
+function _py {
+    py "$__scriptsPath\helper.py" $args 
+}
+
+
+. "$PSScriptRoot/git.ps1"
 . "$PSScriptRoot/browser.ps1"
 . "$PSScriptRoot/projects.ps1"
 
@@ -13,6 +21,7 @@ function cdal { cd "C:\Users\$env:username\Documents\WindowsPowerShell" }
 function al { cdal; subl Microsoft.PowerShell_profile.ps1 }
 function alb { cdal; subl browser.ps1 }
 function alp { cdal; subl projects.ps1 }
+function alg { cdal; subl git.ps1 }
 
 function cdl { cd "$args"; ls }
 
@@ -21,17 +30,6 @@ function res { Start-Process PowerShell; exit }
 
 function build { py .\configuration\build.py }
 function newbuild { py build.py }
-
-#git
-
-function gs { git status }
-function gp { git push }
-
-function push {
-    git add -A
-    git commit -m "$args"
-    git push
-}
 
 #folders
 

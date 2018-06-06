@@ -6,18 +6,18 @@ function st { . "C:\Users\$env:username\AppData\Local\SourceTree\SourceTree.exe"
 function cdbuild { dev; cd build }
 
 function updater {
-    .\build\project\source\updater\Debug\updater.exe $args
+    . "C:\Program Files (x86)\Teslasuit\Service\Debug\updater.exe" $args
 }
 
 #Work
 
 function cdtesla { work; cd "teslasuit" }
+function _rmbuild { _py rm build }
 
 function retesla {
     cdtesla
-    if((Test-Path 'build' -PathType Container)) { 
-        Remove-Item -Recurse -Force build
-    }
+    _rmbuild
+
     tesla
 }
 
@@ -36,9 +36,7 @@ function cdengine { dev; cd "projects\TestEngine" }
 
 function reengine {
     cdengine
-    if((Test-Path 'build' -PathType Container)) { 
-        Remove-Item -Recurse -Force build
-    }
+    _rmbuild
     engine
 }
 
@@ -54,16 +52,14 @@ function cdnet { dev; cd "projects\CPPNetworking" }
 
 function renet {
     cdnet
-    if((Test-Path 'build' -PathType Container)) { 
-        Remove-Item -Recurse -Force build
-    }
+    _rmbuild
     net
 }
 
 function net { 
     cdnet
     if(!(Test-Path 'build' -PathType Container)) { 
-        build
+        newbuild
     }
     vs "build\CPPNetworking.sln" 
 }
