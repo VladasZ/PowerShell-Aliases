@@ -4,8 +4,12 @@ import glob
 import shutil
 import subprocess
 
-command=sys.argv[1]
-path=sys.argv[2]
+command=''
+path=''
+
+if len(sys.argv) == 2:
+    command=sys.argv[1]
+    path=sys.argv[2]
 
 def move(src, dst):
     dirname = os.path.dirname(dst)

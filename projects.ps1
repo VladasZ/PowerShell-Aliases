@@ -1,8 +1,8 @@
 function node { work; vs "node/build/node.sln" }
-function spp { dev; vs "sand\spp\spp.sln" }
+function spp { dev; cd 'sand/spp'; vs "build/spp.sln" }
 function spy { cd '~/Google Drive/dev/python' }
 function scm { cd '~/Google Drive/dev/sand/cmake' }
-function st { . "C:\Users\$env:username\AppData\Local\SourceTree\SourceTree.exe" }
+function st { . "C:/Users/$env:username/AppData/Local/SourceTree/SourceTree.exe" }
 function cdbuild { dev; cd build }
 
 function updater {
@@ -26,13 +26,15 @@ function tesla {
     if(!(Test-Path 'build' -PathType Container)) { 
         build
     }
-    vs "build\project\teslasuit.sln" 
+    vs "build/project/teslasuit.sln" 
 }
 
 
 #Projects
 
-function cdengine { dev; cd "projects\TestEngine" }
+function cddeploy { dev; cd "projects/deploy" }
+
+function cdengine { dev; cd "projects/TestEngine" }
 
 function reengine {
     cdengine
@@ -45,10 +47,10 @@ function engine {
     if(!(Test-Path 'build' -PathType Container)) { 
         newbuild
     }
-    vs "build\TestEngine.sln" 
+    vs "build/TestEngine.sln" 
 }
 
-function cdnet { dev; cd "projects\CPPNetworking" }
+function cdnet { dev; cd "projects/CPPNetworking" }
 
 function renet {
     cdnet
@@ -61,5 +63,5 @@ function net {
     if(!(Test-Path 'build' -PathType Container)) { 
         newbuild
     }
-    vs "build\CPPNetworking.sln" 
+    vs "build/CPPNetworking.sln" 
 }
