@@ -1,3 +1,9 @@
+function py {
+    python3 $@
+}
+function _py {
+    python3 /Users/$USER/Google\ Drive/docs/.shell/helper.py $@
+}
 function res {
     . ~/.bash_profile 
 }
@@ -11,7 +17,7 @@ function dev {
     cd /Users/$USER/Google\ Drive/dev
 }
 function cdal {
-    cd /Users/$USER/Google\ Drive//docs/.shell/
+    cd /Users/$USER/Google\ Drive/docs/.shell/
 }
 function al {
     cdal
@@ -19,4 +25,10 @@ function al {
 }
 function op {
     open .
+}
+function getbuild {
+    _py cleanclone vladasz/build
+}
+function build {
+    python3 build.py
 }

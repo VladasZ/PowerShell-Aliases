@@ -23,8 +23,10 @@ class Function(object):
         result = open('shell.sh','w') 
 
         for fun in functions:
-            result.write(fun.create())
-            print(fun.create())
+
+            function=Function(fun[0], fun[1])
+            result.write(function.create())
+            print(function.create())
 
         result.close()
 

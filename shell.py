@@ -1,20 +1,27 @@
 from generator import Function
 
 clouddir="/Users/$USER/Google\ Drive"
+aldir="/Users/$USER/Google\ Drive/docs/.shell/"
+args="$@"
 
 Function.generate([
 
-        Function('res', '. ~/.bash_profile '),
+    ('py', 'python3 $@'),
 
-        Function('subl', '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'),
-        Function('subll', 'subl .'),
+    ('_py', 'python3 ' + aldir + 'helper.py $@'),
 
-        Function('dev', 'cd ' + clouddir + '/dev'),
+    ('res', '. ~/.bash_profile '),
 
-        Function('cdal', 'cd ' + clouddir + '//docs/.shell/'),
-        Function('al', 'cdal\n   subll'),
+    ('subl', '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'),
+    ('subll', 'subl .'),
 
-        Function('op', 'open .'),
+    ('dev', 'cd ' + clouddir + '/dev'),
 
+    ('cdal', 'cd ' + aldir),
+    ('al', 'cdal\n   subll'),
 
-    ])
+    ('op', 'open .'),
+
+    ('getbuild', '_py cleanclone vladasz/build'),
+    ('build', 'python3 build.py')
+])

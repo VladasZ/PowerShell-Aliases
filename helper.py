@@ -2,15 +2,19 @@ import os
 import sys
 import glob
 import shutil
+import platform
 import subprocess
+
+is_mac=platform.system() == 'Darwin'
+is_win=platform.system() == 'Windows'
 
 command=''
 path=''
 
-if len(sys.argv) > 0:
+if len(sys.argv) > 1:
     command=sys.argv[1]
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 2:
     path=sys.argv[2]
 
 def move(src, dst):
@@ -30,6 +34,9 @@ def run(commands = [], *args):
         os.sys.exit(code)
 
 def rm(path):
+    if (is_mac):
+        run(['rm -rf ' + path])
+        return
     if os.path.isdir(path) and not os.path.islink(path):
         run(['rmdir', '/s', '/q', path])
     elif os.path.exists(path):
@@ -37,6 +44,9 @@ def rm(path):
 
 def stat(path):
     print(os.stat(path))
+
+if command == 'hello':
+    print('hello')
 
 if command == 'rm':
     rm(path)
@@ -49,11 +59,15 @@ if command == 'stat':
 if command == 'cleanclone':
     temp = '__temp'
     rm(temp)
-    run(['git', 'clone', '--depth=1', '--branch=master', "git://github.com/" + path, temp])
+    #run(['git', 'clone', '--depth=1', '--branch=master', "git://github.com/" + path, temp])
+
+    gitcall = 'git clone --depth=1 --branch=master git://github.com/' + path + ' ' + temp
+    print(gitcall)
+    run([gitcall])
     rm('__todelete1')
     rm('__todelete2')
-    move(temp + '\\.gitignore', '__todelete1')
-    move(temp + '\\.git', '__todelete2')
+    move(temp + '/.gitignore', '__todelete1')
+    move(temp + '/.git', '__todelete2')
     rm('__todelete1')
     rm('__todelete2')
 
