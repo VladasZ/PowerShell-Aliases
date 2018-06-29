@@ -6,7 +6,7 @@ function st { . "C:/Users/$env:username/AppData/Local/SourceTree/SourceTree.exe"
 function cdbuild { dev; cd build }
 
 function updater {
-    . "C:\Program Files (x86)\Teslasuit\Service\Debug\updater.exe" $args
+    . "C:\Users\U.Zakreuskis\Google Drive\dev\work\teslasuit\build\project\source\updater\Debug\updater.exe" $args
 }
 
 #Work

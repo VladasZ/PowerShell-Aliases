@@ -17,7 +17,7 @@ function _py {
 . "$PSScriptRoot/browser.ps1"
 . "$PSScriptRoot/projects.ps1"
 
-function cdal { cd "C:\Users\$env:username\Documents\WindowsPowerShell" }
+function cdal { cd "C:/Users/$env:username/Documents/WindowsPowerShell" }
 function al { cdal; subl Microsoft.PowerShell_profile.ps1 }
 function alb { cdal; subl browser.ps1 }
 function alp { cdal; subl projects.ps1 }
@@ -37,8 +37,8 @@ function hm { cd ~/ }
 function dev { cd '~/Google Drive/dev' }
 function work { cd '~/Google Drive/dev/work' }
 function sand { cd '~/Google Drive/dev/sand' }
-function pf { cd 'C:\Program Files\'; op }
-function pf3 { cd 'C:\Program Files (x86)\'; op }
+function pf { cd 'C:/Program Files/'; op }
+function pf3 { cd 'C:/Program Files (x86)/'; op }
 
 echo hello $env:username
 
