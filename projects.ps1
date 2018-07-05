@@ -1,12 +1,12 @@
 function node { work; vs "node/build/node.sln" }
 function spp { dev; cd 'sand/spp'; vs "build/spp.sln" }
-function spy { cd '~/Google Drive/dev/python' }
-function scm { cd '~/Google Drive/dev/sand/cmake' }
+function spy { cd $__devPath + 'python' }
+function scm { cd $__devPath + 'sand/cmake' }
 function st { . "C:/Users/$env:username/AppData/Local/SourceTree/SourceTree.exe" }
 function cdbuild { dev; cd build }
 
 function updater {
-    . "C:\Users\U.Zakreuskis\Google Drive\dev\work\teslasuit\build\project\source\updater\Debug\updater.exe" $args
+    . "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe" $args
 }
 
 #Work
@@ -29,6 +29,14 @@ function tesla {
     vs "build/project/teslasuit.sln" 
 }
 
+function inst {
+    cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe"
+    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.dll"
+  
+    mkdir "C:\Program Files (x86)\Teslasuit\pack" -Force
+    cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\pack\updater.exe"
+    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\pack\rest.api.dll"
+}
 
 #Projects
 

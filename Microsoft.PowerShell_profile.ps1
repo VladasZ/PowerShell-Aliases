@@ -6,7 +6,7 @@ function vs { . "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\C
 
 $__scriptsPath = "C:\Users\$env:username\Documents\WindowsPowerShell"
 $env:Path += 'C:\Program Files\CMake\bin\'
-
+$__devPath = "~/dev"
 
 function _py {
     py "$__scriptsPath\helper.py" $args 
@@ -34,9 +34,9 @@ function newbuild { py build.py }
 #folders
 
 function hm { cd ~/ }
-function dev { cd '~/Google Drive/dev' }
-function work { cd '~/Google Drive/dev/work' }
-function sand { cd '~/Google Drive/dev/sand' }
+function dev { cd $__devPath }
+function work { cd "$__devPath/work" }
+function sand { cd "$__devPath/sand" }
 function pf { cd 'C:/Program Files/'; op }
 function pf3 { cd 'C:/Program Files (x86)/'; op }
 
