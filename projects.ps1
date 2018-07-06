@@ -12,7 +12,7 @@ function updater {
 #Work
 
 function cdtesla { work; cd "teslasuit" }
-function _rmbuild { _py rm build }
+function _rmbuild { rm build -Force -Recurse }
 
 function retesla {
     cdtesla
