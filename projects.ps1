@@ -31,11 +31,28 @@ function tesla {
 
 function inst {
     cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe"
+    cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.dll"
+    cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.extended.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.extended.dll"
     cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.dll"
+    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.extended.dll"
   
     mkdir "C:\Program Files (x86)\Teslasuit\pack" -Force
     cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\pack\updater.exe"
     cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\pack\rest.api.dll"
+    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\pack\rest.api.extended.dll"
+}
+
+function cdsdk {
+    work; cd 'sdk'
+}
+
+
+function teslasign {
+
+}
+
+function binarycreator {
+    . 'C:\Qt\QtIFW-3.0.2\bin\binarycreator' $args
 }
 
 #Projects

@@ -1,7 +1,7 @@
 function ch { . 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' $args }
 function touch { $null >> $args }
 function subl { . 'C:\Program Files\Sublime Text 3\subl.exe' $args }
-function subll { subl . }
+function ss { subl . }
 function vs { . "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $args }
 
 $__scriptsPath = "C:\Users\$env:username\Documents\WindowsPowerShell"
@@ -28,7 +28,7 @@ function cdl { cd "$args"; ls }
 function op { ii . }
 function res { Start-Process PowerShell; exit }
 
-function build { py .\configuration\build.py }
+function build { py .\configuration\build.py $args }
 function newbuild { py build.py }
 
 #folders
