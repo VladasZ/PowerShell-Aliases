@@ -18,7 +18,7 @@ function _py {
 . "$PSScriptRoot/projects.ps1"
 
 function cdal { cd "C:/Users/$env:username/Documents/WindowsPowerShell" }
-function al { cdal; subl Microsoft.PowerShell_profile.ps1 }
+function al { cdal; ss }
 function alb { cdal; subl browser.ps1 }
 function alp { cdal; subl projects.ps1 }
 function alg { cdal; subl git.ps1 }

@@ -29,17 +29,30 @@ function tesla {
     vs "build/project/teslasuit.sln" 
 }
 
+function test {
+    . "$__devPath\work\teslasuit\build\project\tests\api\bin\test.api.exe"
+}
+
+function cdpatch {
+    cd "C:\Program Files (x86)\Teslasuit\patch\"
+}
+
 function inst {
     cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe"
+    cp "$__devPath\work\teslasuit\build\project\source\service\bin\teslasuit.service.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\teslasuit.service.exe"
     cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.dll"
     cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.extended.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.extended.dll"
     cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.dll"
     cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.extended.dll"
   
-    mkdir "C:\Program Files (x86)\Teslasuit\pack" -Force
-    cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\pack\updater.exe"
-    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\pack\rest.api.dll"
-    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\pack\rest.api.extended.dll"
+    mkdir "C:\Program Files (x86)\Teslasuit\patch" -Force
+    mkdir "C:\Program Files (x86)\Teslasuit\patch\lib" -Force
+    mkdir "C:\Program Files (x86)\Teslasuit\patch\bin" -Force
+
+    cp "$__devPath\work\teslasuit\build\project\source\service\bin\teslasuit.service.exe" "C:\Program Files (x86)\Teslasuit\patch\bin\teslasuit.service.exe"
+    cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\patch\bin\updater.exe"
+    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\rest.api.dll"
+    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\rest.api.extended.dll"
 }
 
 function cdsdk {
