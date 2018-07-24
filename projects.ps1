@@ -5,10 +5,6 @@ function scm { cd $__devPath + 'sand/cmake' }
 function st { . "C:/Users/$env:username/AppData/Local/SourceTree/SourceTree.exe" }
 function cdbuild { dev; cd build }
 
-function updater {
-    . "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe" $args
-}
-
 #Work
 
 function cdtesla { work; cd "teslasuit" }
@@ -41,9 +37,7 @@ function inst {
     cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe"
     cp "$__devPath\work\teslasuit\build\project\source\service\bin\teslasuit.service.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\teslasuit.service.exe"
     cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.dll"
-    cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.extended.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.extended.dll"
     cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.dll"
-    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.extended.dll"
   
     mkdir "C:\Program Files (x86)\Teslasuit\patch" -Force
     mkdir "C:\Program Files (x86)\Teslasuit\patch\lib" -Force
@@ -52,7 +46,8 @@ function inst {
     cp "$__devPath\work\teslasuit\build\project\source\service\bin\teslasuit.service.exe" "C:\Program Files (x86)\Teslasuit\patch\bin\teslasuit.service.exe"
     cp "$__devPath\work\teslasuit\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\patch\bin\updater.exe"
     cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\rest.api.dll"
-    cp "$__devPath\work\teslasuit\build\project\source\rest_api\Debug\rest.api.extended.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\rest.api.extended.dll"
+    cp "$__devPath\work\teslasuit\build\project\source\api\Debug\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\teslasuit.api.dll"
+
 }
 
 function cdsdk {
@@ -63,6 +58,19 @@ function cdsdk {
 function teslasign {
 
 }
+
+function esptool {
+    . "C:\Program Files (x86)\Teslasuit\1.0\bin\esptool.exe" $args
+}
+
+function mkspiffs {
+    . "C:\Program Files (x86)\Teslasuit\1.0\bin\mkspiffs.exe" $args
+}
+
+function updater {
+    . "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe" $args
+}
+
 
 function binarycreator {
     . 'C:\Qt\QtIFW-3.0.2\bin\binarycreator' $args
