@@ -12,7 +12,6 @@ function _py {
     py "$__scriptsPath\helper.py" $args 
 }
 
-
 . "$PSScriptRoot/git.ps1"
 . "$PSScriptRoot/browser.ps1"
 . "$PSScriptRoot/projects.ps1"
@@ -39,6 +38,12 @@ function work { cd "$__devPath/work" }
 function sand { cd "$__devPath/sand" }
 function pf { cd 'C:/Program Files/'; op }
 function pf3 { cd 'C:/Program Files (x86)/'; op }
+
+function retcode { echo "$lastexitcode" }
+
+function ma {
+    Set-Clipboard -Value "u.zakreuskis@vrweartek.com"
+}
 
 echo hello $env:username
 
