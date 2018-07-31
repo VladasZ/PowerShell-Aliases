@@ -1,3 +1,4 @@
+import os
 import sys
 
 def function_begin(name):
@@ -20,13 +21,14 @@ class Function(object):
     @staticmethod
     def generate(functions):
 
-        result = open('shell.sh','w') 
+        result = open(os.path.expanduser('~/dev/shell/shell.sh'), 'w') 
+
+        result.write('echo hello\n')
 
         for fun in functions:
 
             function=Function(fun[0], fun[1])
             result.write(function.create())
-            print(function.create())
 
         result.close()
 
