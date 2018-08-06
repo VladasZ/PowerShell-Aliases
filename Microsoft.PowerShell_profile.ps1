@@ -41,6 +41,8 @@ function pf3 { cd 'C:/Program Files (x86)/'; op }
 
 function retcode { echo "$lastexitcode" }
 
+function clone { git clone --recursive $args }
+
 function ma {
     Set-Clipboard -Value "u.zakreuskis@vrweartek.com"
 }
