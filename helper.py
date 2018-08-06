@@ -5,11 +5,12 @@ import shutil
 import platform
 import subprocess
 
-is_mac=platform.system() == 'Darwin'
-is_win=platform.system() == 'Windows'
+is_mac = platform.system() == 'Darwin'
+is_win = platform.system() == 'Windows'
+is_linux = not is_mac and not is_win
 
-command=''
-path=''
+command = ''
+path = ''
 
 if len(sys.argv) > 1:
     command=sys.argv[1]
@@ -34,7 +35,7 @@ def run(commands = [], *args):
         os.sys.exit(code)
 
 def rm(path):
-    if (is_mac):
+    if (is_mac or is_linux):
         run(['rm -rf ' + path])
         return
     if os.path.isdir(path) and not os.path.islink(path):

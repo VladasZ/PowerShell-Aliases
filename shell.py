@@ -1,27 +1,36 @@
 from generator import Function
 
-clouddir="/Users/$USER/Google\ Drive"
-aldir="/Users/$USER/Google\ Drive/docs/.shell/"
-args="$@"
+aldir = '~/dev/shell'
+args = '$@'
 
 Function.generate([
 
-    ('py', 'python3 $@'),
+     ('r', 'mkdir $@')
 
-    ('_py', 'python3 ' + aldir + 'helper.py $@'),
+    ,('py', 'sudo python3 $@')
 
-    ('res', '. ~/.bash_profile '),
+    ,('_py', 'python3 ' + aldir + '/helper.py $@')
 
-    ('subl', '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'),
-    ('subll', 'subl .'),
+    ,('res', 'py ' + aldir + '/shell.py;. ' + aldir + '/shell.sh')
 
-    ('dev', 'cd ' + clouddir + '/dev'),
+    ,('subll', 'subl .')
 
-    ('cdal', 'cd ' + aldir),
-    ('al', 'cdal\n   subll'),
+    ,('dev', 'cd  ~/dev')
+    ,('sand', 'cd ~/dev/sand')
 
-    ('op', 'open .'),
+    ,('cdal', 'cd ' + aldir)
+    ,('al', 'cdal\n subll')
 
-    ('getbuild', '_py cleanclone vladasz/build'),
-    ('build', 'python3 build.py')
+    ,('op', 'xdg-open .')
+
+    ,('getbuild', '_py cleanclone vladasz/build')
+    ,('build', 'py build.py')
+
+##projects
+
+    ,('cdengine', 'cd ~/dev/projects/testengine')
+    ,('bengine', 'cdengine;cd build;sudo make;cd ..')
+    ,('rengine', 'cdengine;cd build/source/Engine/bin/; ./Engine; cdengine')
+    ,('engine', 'bengine;rengine')
+
 ])
