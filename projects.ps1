@@ -1,7 +1,8 @@
 
 
-$__teslaPath = "$__devPath/work/teslasuit"
-$__hapticPath = "$__devPath/work/HapticEditor"
+$__workPath = "$__devPath/work"
+$__teslaPath = "$__workPath/service"
+$__hapticPath = "$__workPath/HapticEditor"
 
 function node { work; vs "node/build/node.sln" }
 function spp { dev; cd 'sand/spp'; vs "build/spp.sln" }
@@ -12,7 +13,7 @@ function cdbuild { dev; cd build }
 
 #Work
 
-function cdtesla { work; cd "teslasuit" }
+function cdtesla { work; cd "service" }
 function _rmbuild { rm build -Force -Recurse }
 
 function retesla {
@@ -31,7 +32,11 @@ function tesla {
 }
 
 function test {
-    . "$__devPath\work\teslasuit\build\project\tests\api\bin\test.api.exe"
+    . "C:\Users\u.zakreuskis\dev\work\service\build\project\tests\api\bin\test.api.exe"
+}
+
+function ser {
+    . "C:\Users\u.zakreuskis\dev\work\service\build\project\source\service\bin\teslasuit.service.exe"
 }
 
 function cdpatch {
@@ -74,19 +79,6 @@ function teslasign {
 
 }
 
-function esptool {
-    . "C:\Program Files (x86)\Teslasuit\1.0\bin\esptool.exe" $args
-}
-
-function mkspiffs {
-    . "C:\Program Files (x86)\Teslasuit\1.0\bin\mkspiffs.exe" $args
-}
-
-function updater {
-    . "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe" $args
-}
-
-
 function binarycreator {
     . 'C:\Qt\QtIFW-3.0.2\bin\binarycreator' $args
 }
@@ -101,6 +93,11 @@ function reengine {
     cdengine
     _rmbuild
     engine
+}
+
+function cu {
+    work
+    vs "control_unit/build/ControlUnit.sln"
 }
 
 function engine { 
