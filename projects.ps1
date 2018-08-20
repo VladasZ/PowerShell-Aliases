@@ -40,7 +40,7 @@ function ser {
 }
 
 function cdpatch {
-    cd "C:\Program Files (x86)\Teslasuit\patch\"
+    cd "C:\Program Files (x86)\Teslasuit\"
 }
 
 function inst {
@@ -57,6 +57,22 @@ function inst {
     cp "$__teslaPath\build\project\source\updater\Debug\updater.exe" "C:\Program Files (x86)\Teslasuit\patch\bin\updater.exe"
     cp "$__teslaPath\build\project\source\rest_api\Debug\rest.api.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\rest.api.dll"
     cp "$__teslaPath\build\project\source\api\Debug\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\patch\lib\teslasuit.api.dll"
+}
+
+function inst_release {
+    cp "$__teslaPath\build\project\source\updater\Release\updater.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\updater.exe"
+    cp "$__teslaPath\build\project\source\service\bin\teslasuit.service.exe" "C:\Program Files (x86)\Teslasuit\1.0\bin\teslasuit.service.exe"
+    cp "$__teslaPath\build\project\source\api\Release\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\teslasuit.api.dll"
+    cp "$__teslaPath\build\project\source\rest_api\Release\rest.api.dll" "C:\Program Files (x86)\Teslasuit\1.0\lib\rest.api.dll"
+  
+    mkdir "C:\Program Files (x86)\Teslasuit\patch_release" -Force
+    mkdir "C:\Program Files (x86)\Teslasuit\patch_release\lib" -Force
+    mkdir "C:\Program Files (x86)\Teslasuit\patch_release\bin" -Force
+
+    cp "$__teslaPath\build\project\source\service\bin\teslasuit.service.exe" "C:\Program Files (x86)\Teslasuit\patch_release\bin\teslasuit.service.exe"
+    cp "$__teslaPath\build\project\source\updater\Release\updater.exe" "C:\Program Files (x86)\Teslasuit\patch_release\bin\updater.exe"
+    cp "$__teslaPath\build\project\source\rest_api\Release\rest.api.dll" "C:\Program Files (x86)\Teslasuit\patch_release\lib\rest.api.dll"
+    cp "$__teslaPath\build\project\source\api\Release\teslasuit.api.dll" "C:\Program Files (x86)\Teslasuit\patch_release\lib\teslasuit.api.dll"
 }
 
 function insta {
