@@ -13,6 +13,10 @@ function cdbuild { dev; cd build }
 
 #Work
 
+function pingcu { ping 192.168.1.1 -t }
+function udp { nc -ulvp $args }
+function tcp { nc -lvp $args }
+
 function cdtesla { work; cd "service" }
 function _rmbuild { rm build -Force -Recurse }
 
