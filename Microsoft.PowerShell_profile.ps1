@@ -28,7 +28,7 @@ function op { ii . }
 function res { Start-Process PowerShell; exit }
 
 function build { py .\configuration\build.py $args }
-function newbuild { py build.py $args }
+function newbuild { py "C:/Users/$env:username/.emacs.d/utils/Build.py" $args }
 
 #folders
 
@@ -45,6 +45,14 @@ function clone { git clone --recursive $args }
 
 function ma {
     Set-Clipboard -Value "u.zakreuskis@vrweartek.com"
+}
+
+function wave {
+    rm C:\Users\$env:username\Desktop\dump.vcd.zip
+    rm C:\Users\$env:username\Desktop\dump.vcd
+    cp Z:\dump.vcd.zip Desktop
+    Expand-Archive C:\Users\u.zakreuskis\Desktop\dump.vcd.zip -DestinationPath C:\Users\$env:username\Desktop
+    C:\Users\u.zakreuskis\Desktop\dump.vcd
 }
 
 echo hello $env:username

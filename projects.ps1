@@ -17,7 +17,23 @@ function pingcu { ping 192.168.1.1 -t }
 function udp { nc -ulvp $args }
 function tcp { nc -lvp $args }
 
+function arm {
+    sand
+    vs "arm/build/node.sln"
+}
+
+function cdsmon {
+    dev
+    cd "projects/smon"
+}
+
+function smon {
+    cdsmon
+    vs "build/smon.sln"
+}
+
 function cdtesla { work; cd "service" }
+function cdshell { dev; cd "shell" }
 function _rmbuild { rm build -Force -Recurse }
 
 function retesla {
